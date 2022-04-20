@@ -1,4 +1,5 @@
 import asyncio
+import random
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -13,21 +14,36 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 
 from config import HNDLR, bot, call_py
-from MusicAndVideo.helpers.other.generator.chattitle import CHAT_TITLE
-from MusicAndVideo.helpers.other.generator.thumbnail import gen_thumb
 from MusicAndVideo.helpers.queues import QUEUE, add_to_queue, get_queue
 
+AMBILFOTO = [
+    "https://telegra.ph/file/2f7187bd1edbe9b4c9a9e.jpg",
+    "https://telegra.ph/file/c969b241c5103576cfb3f.jpg",
+    "https://telegra.ph/file/fe447eb2833c4ec552836.jpg",
+    "https://telegra.ph/file/e28aa0b3f3e951b98b4e5.jpg",
+    "https://telegra.ph/file/c8b853ba20d77c52f489a.jpg",
+    "https://telegra.ph/file/bced3a0f65d53e83b7a34.jpg",
+    "https://telegra.ph/file/89f983d3b5ee627e97f33.jpg",
+    "https://telegra.ph/file/f97fcd5debf81b137514b.jpg",
+    "https://telegra.ph/file/ceb854b2f20558f139d5d.jpg",
+    "https://telegra.ph/file/24e98de222ccd49557911.jpg",
+    "https://telegra.ph/file/6a4ae1020094cae905b39.jpg",
+]
+
+IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
 # music player
 def ytsearch(query):
     try:
-        search = VideosSearch(query, limit=1).result()
-        data = search["result"][0]
-        songname = data["title"]
-        url = data["link"]
-        duration = data["duration"]
-        thumbnail = f"https://i.ytimg.com/vi/{data['id']}/hqdefault.jpg"
-        return [songname, url, duration, thumbnail]
+        search = VideosSearch(query, limit=1)
+        for r in search.result()["result"]:
+            ytid = r["id"]
+            if len(r["title"]) > 34:
+                songname = r["title"][:35] + "..."
+            else:
+                songname = r["title"]
+            url = f"https://www.youtube.com/watch?v={ytid}"
+        return [songname, url]
     except Exception as e:
         print(e)
         return 0
@@ -54,13 +70,15 @@ async def ytdl(link):
 # video player
 def ytsearch(query):
     try:
-        search = VideosSearch(query, limit=1).result()
-        data = search["result"][0]
-        songname = data["title"]
-        url = data["link"]
-        duration = data["duration"]
-        thumbnail = f"https://i.ytimg.com/vi/{data['id']}/hqdefault.jpg"
-        return [songname, url, duration, thumbnail]
+        search = VideosSearch(query, limit=1)
+        for r in search.result()["result"]:
+            ytid = r["id"]
+            if len(r["title"]) > 34:
+                songname = r["title"][:35] + "..."
+            else:
+                songname = r["title"]
+            url = f"https://www.youtube.com/watch?v={ytid}"
+        return [songname, url]
     except Exception as e:
         print(e)
         return 0
