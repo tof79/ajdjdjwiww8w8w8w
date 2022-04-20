@@ -106,10 +106,11 @@ async def ytdl(link):
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
+    m.chat.title
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**🔄 Memproses**")
+            huehue = await replied.reply("**جاري التشغيل...،💗🎧**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -124,7 +125,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/d6f92c979ad96b2031cba.png",
+                    photo="https://telegra.ph/file/2f7187bd1edbe9b4c9a9e.jpg",
                     caption=f"""
 **#⃣ Lagu Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]({link})
