@@ -102,7 +102,7 @@ async def ytdl(link):
         return 0, stderr.decode()
 
 
-@Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ش"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
     replied = m.reply_to_message
     chat_id = m.chat.id
@@ -110,7 +110,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**جاري التشغيل...،💗🎧**")
+            huehue = await replied.reply("**اެبشࢪ ثواެني بس اެبحث 🌵.**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -127,10 +127,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
                     caption=f"""
-تم بدء تشغيل الاغنية ▶Ke {pos}
-🎧 الاسم: [{songname}]({link})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {pos}
+-› اެݪاެسم: [{songname}]({link})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                 )
             else:
@@ -147,10 +147,10 @@ async def play(client, m: Message):
                 await m.reply_photo(
                     photo="https://te.legra.ph/file/90e3b3aeb77e3e598d66d.jpg",
                     caption=f"""
-تم بدء تشغيل الاغنية ،💗🎧
-🎧 الاسم: [{songname}]({link})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
+-› اެݪاެسم: [{songname}]({link})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                 )
 
@@ -178,10 +178,10 @@ async def play(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**تم بدء تشغيل الاغنية ،💗🎧 {pos}
-🎧 الاسم: [{songname}]({url})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {pos}
+-› اެݪاެسم: [{songname}]({url})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -199,10 +199,10 @@ async def play(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**تم بدء تشغيل الاغنية ،💗🎧
-🎧 الاسم: [{songname}]({url})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
+-› اެݪاެسم: [{songname}]({url})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -244,10 +244,10 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://te.legra.ph/file/2a726c634dbc3b9e8f451.jpg",
                     caption=f"""
-**#⃣ تم بدء تشغيل الفيديو بنجاح {pos}
-🎧 الاسم: [{songname}]({link})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ{pos}
+-› اެݪاެسم: [{songname}]({link})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                 )
             else:
@@ -268,10 +268,10 @@ async def vplay(client, m: Message):
                 await m.reply_photo(
                     photo="https://te.legra.ph/file/466de30ee0f9383c8e09e.jpg",
                     caption=f"""
-**الان تم بدء التشغيل ▶
-🎧 الاسم: [{songname}]({link})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
+-› اެݪاެسم: [{songname}]({link})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                 )
 
@@ -305,10 +305,10 @@ async def vplay(client, m: Message):
                         await m.reply_photo(
                             photo=f"{IMAGE_THUMBNAIL}",
                             caption=f"""
-**#⃣الان تم بدء تشغيل الفيديو ▶ {pos}
-🎧 الاسم: [{songname}]({url})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {pos}
+-› اެݪاެسم: [{songname}]({url})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                         )
                     else:
@@ -324,10 +324,10 @@ async def vplay(client, m: Message):
                             await m.reply_photo(
                                 photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
-**الان تم بدء تشغيل الفيديو ▶
-🎧 الاسم: [{songname}]({url})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެݪحِاެݪةِ : تَمِ اެݪتَشِغِيَݪ بَنِجَاެحِ
+-› اެݪاެسم: [{songname}]({url})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                             )
                         except Exception as ep:
@@ -373,10 +373,10 @@ async def playfrom(client, m: Message):
                     await m.reply_photo(
                         photo="https://te.legra.ph/file/430dcf25456f2bb38109f.jpg",
                         caption=f"""
-**الان تم بدء تشغيل الفيديو ▶ {chat}
-🎧 الاسم: [{songname}]({link})
-ℹ️ معرف الدردشة: {chat_id}
-🎧 Atas Permintaan: {m.from_user.mention}**
+**-› اެبشࢪ ضفتهاެ ݪلانتضاࢪ {chat}
+-› اެݪاެسم: [{songname}]({link})
+-› اެيدي اެݪمحاެدثةه: {chat_id}
+-› طݪب اެݪحݪۅٛ: {m.from_user.mention}**
 """,
                     )
             await hmm.delete()
