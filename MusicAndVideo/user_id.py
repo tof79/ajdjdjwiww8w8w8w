@@ -5,7 +5,7 @@ from config import HNDLR
 from MusicAndVideo.helpers.get_file_id import get_file_id
 
 
-@Client.on_message(filters.command(["id"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["ايدي"], prefixes=f"{HNDLR}"))
 async def showid(_, message: Message):
     chat_type = message.chat.type
 
@@ -15,15 +15,15 @@ async def showid(_, message: Message):
 
     elif chat_type in ["group", "supergroup"]:
         _id = ""
-        _id += "<b>ID group</b>: " f"<code>{message.chat.id}</code>\n"
+        _id += "<b>-›  ايدي المجموعة</b>: " f"<code>{message.chat.id}</code>\n"
         if message.reply_to_message:
             _id += (
-                "<b>ID pengguna yang dibalas</b>: "
+                "<b>-› هذه اެيدية عيني</b>: "
                 f"<code>{message.reply_to_message.from_user.id}</code>\n"
             )
             file_info = get_file_id(message.reply_to_message)
         else:
-            _id += "<b>ID pengguna</b>: " f"<code>{message.from_user.id}</code>\n"
+            _id += "<b>-› هذه اެيديك عيني</b>: " f"<code>{message.from_user.id}</code>\n"
             file_info = get_file_id(message)
         if file_info:
             _id += (
