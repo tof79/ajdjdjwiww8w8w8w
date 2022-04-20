@@ -17,17 +17,17 @@ from config import HNDLR, bot, call_py
 from MusicAndVideo.helpers.queues import QUEUE, add_to_queue, get_queue
 
 AMBILFOTO = [
-    "https://telegra.ph/file/2f7187bd1edbe9b4c9a9e.jpg",
-    "https://telegra.ph/file/c969b241c5103576cfb3f.jpg",
-    "https://telegra.ph/file/fe447eb2833c4ec552836.jpg",
-    "https://telegra.ph/file/e28aa0b3f3e951b98b4e5.jpg",
-    "https://telegra.ph/file/c8b853ba20d77c52f489a.jpg",
-    "https://telegra.ph/file/bced3a0f65d53e83b7a34.jpg",
-    "https://telegra.ph/file/89f983d3b5ee627e97f33.jpg",
-    "https://telegra.ph/file/f97fcd5debf81b137514b.jpg",
-    "https://telegra.ph/file/ceb854b2f20558f139d5d.jpg",
-    "https://telegra.ph/file/24e98de222ccd49557911.jpg",
-    "https://telegra.ph/file/6a4ae1020094cae905b39.jpg",
+    "https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
+    "https://te.legra.ph/file/90e3b3aeb77e3e598d66d.jpg",
+    "https://te.legra.ph/file/2a726c634dbc3b9e8f451.jpg",
+    "https://te.legra.ph/file/466de30ee0f9383c8e09e.jpg",
+    "https://te.legra.ph/file/430dcf25456f2bb38109f.jpg",
+    "https://te.legra.ph/file/c74686f70a1b918060b8e.jpg",
+    "https://te.legra.ph/file/a282c460a7f98aedbe956.jpg",
+    "https://te.legra.ph/file/478f9fa85efb2740f2544.jpg",
+    "https://te.legra.ph/file/cd5c96a3c7e8ae1913ef3.jpg",
+    "https://te.legra.ph/file/1cc6513411578cafda022.jpg",
+    "https://te.legra.ph/file/46fa55b49b85c084159ce.jpg",
 ]
 
 IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
@@ -125,7 +125,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/2f7187bd1edbe9b4c9a9e.jpg",
+                    photo="https://te.legra.ph/file/402c519808f75bd9b1803.jpg",
                     caption=f"""
 تم بدء تشغيل الاغنية ▶Ke {pos}
 🎧 الاسم: [{songname}]({link})
@@ -145,7 +145,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/c969b241c5103576cfb3f.jpg",
+                    photo="https://te.legra.ph/file/90e3b3aeb77e3e598d66d.jpg",
                     caption=f"""
 تم بدء تشغيل الاغنية ،💗🎧
 🎧 الاسم: [{songname}]({link})
@@ -242,7 +242,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/fe447eb2833c4ec552836.jpg",
+                    photo="https://te.legra.ph/file/2a726c634dbc3b9e8f451.jpg",
                     caption=f"""
 **#⃣ تم بدء تشغيل الفيديو بنجاح {pos}
 🎧 الاسم: [{songname}]({link})
@@ -266,7 +266,7 @@ async def vplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/e28aa0b3f3e951b98b4e5.jpg",
+                    photo="https://te.legra.ph/file/466de30ee0f9383c8e09e.jpg",
                     caption=f"""
 **الان تم بدء التشغيل ▶
 🎧 الاسم: [{songname}]({link})
@@ -371,7 +371,7 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/c8b853ba20d77c52f489a.jpg",
+                        photo="https://te.legra.ph/file/430dcf25456f2bb38109f.jpg",
                         caption=f"""
 **الان تم بدء تشغيل الفيديو ▶ {chat}
 🎧 الاسم: [{songname}]({link})
