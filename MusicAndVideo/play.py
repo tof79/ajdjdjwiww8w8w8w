@@ -159,7 +159,7 @@ async def play(client, m: Message):
             await m.reply("-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي 🌵.")
         else:
             await m.delete()
-            huehue = await m.reply(اެبشࢪ ثواެني بس اެبحث 🌵.")
+            huehue = await m.reply("اެبشࢪ ثواެني بس اެبحث 🌵.")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
