@@ -145,35 +145,28 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/6213d2673486beca02967.png",
+                    photo="https://telegra.ph/file/c969b241c5103576cfb3f.jpg",
                     caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]({link})
 💬 Chat ID: {chat_id}
 🎧 Atas Permintaan: {m.from_user.mention}**
 """,
-                )
+                               )
 
     else:
         if len(m.command) < 2:
-            await m.reply("Balas ke File Audio atau berikan sesuatu untuk Pencarian")
+            await m.reply("الرد على ملف صوتي أو إعطاء شيء للبحث")
         else:
             await m.delete()
-            huehue = await m.reply("🔎 Pencarian")
+            huehue = await m.reply("جاري التشغيل...،💗🎧")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("`Tidak Menemukan Apapun untuk Kueri yang Diberikan`")
+                await huehue.edit("لم يتم العثور على شيء , اعطني اسم المغني كاملℹ️")
             else:
                 songname = search[0]
-                title = search[0]
                 url = search[1]
-                duration = search[2]
-                thumbnail = search[3]
-                userid = m.from_user.id
-                srrf = m.chat.title
-                ctitle = await CHAT_TITLE(srrf)
-                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR ⚠️** \n\n`{ytlink}`")
@@ -183,15 +176,15 @@ async def play(client, m: Message):
                         await huehue.delete()
                         # await m.reply_to_message.delete()
                         await m.reply_photo(
-                            photo=f"{thumb}",
-                            caption=f"""
+                            photo=f"{IMAGE_THUMBNAIL}",
+                            caption=f""" 
 **#⃣ Lagu Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]({url})
 ⏱️ Durasi: {duration}
 💬 Chat ID: {chat_id}
 🎧 Atas Permintaan: {m.from_user.mention}**
 """,
-                        )
+                           )
                     else:
                         try:
                             await call_py.join_group_call(
@@ -205,7 +198,7 @@ async def play(client, m: Message):
                             await huehue.delete()
                             # await m.reply_to_message.delete()
                             await m.reply_photo(
-                                photo=f"{thumb}",
+                                photo=f"{IMAGE_THUMBNAIL}",
                                 caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]({url})
