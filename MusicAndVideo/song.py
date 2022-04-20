@@ -23,10 +23,10 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            "Sintaks Perintah Tidak Valid, Silakan Periksa Menu Bantuan Untuk Tahu Lebih Banyak!",
+            "-› يرجى اعطاء اسم الاغنية او راجع زر الاوامر لمعرفة استخدامي 🌵.",
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎 Mencari** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"** -› اެسم اެغنيتك :** `{urlissed}`")
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
