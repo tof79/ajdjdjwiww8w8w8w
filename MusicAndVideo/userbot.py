@@ -67,9 +67,9 @@ async def restart(client, m: Message):
 async def help(client, m: Message):
     await m.delete()
     HELP = f"""
-<b>هݪاެ بࢪۅ 🌵 {m.from_user.mention}!
+<b>هݪاެ بࢪۅ 🥇 {m.from_user.mention}!
 
-🎗️ يمديك تستخدم ذي الاوامر في المجموعة والخاص 
+🩸 يمديك تستخدم ذي الاوامر في المجموعة والخاص 
 -›  {HNDLR}ش - بالرد على ملف صوتي او اسم اغنية 
 -›  {HNDLR}ف  - بالرد على مقطع فيديو او اسم فيديو
 -›  {HNDLR}الانتضار - لرؤية قائمة الانتضار
@@ -79,24 +79,5 @@ async def help(client, m: Message):
 -›  {HNDLR}كتم - لكتم صوت الحساب
 -›  {HNDLR}تخ - لتخطي اغنية من الانتضار
 -›  {HNDLR}بحث او ب - لبحث اغنية من اليوتيوب
--›  {HNDLR}ايدي - لرؤية الايدي الخاص بك
 -›  {HNDLR}ك - لايقاف تشغيل جميع الاغاني</b>
 """
-    await m.reply(HELP)
-
-
-@Client.on_message(filters.command(["السورس"], prefixes=f"{HNDLR}"))
-async def repo(client, m: Message):
-    await m.delete()
-    REPO = f"""
-<b> هݪاެ بࢪۅ 🌵 {m.from_user.mention}!
-
-قناة السورس : @xl444
-مطور السورس : @rr8r9
-
-🎗️ السورس  
-• [github](https://heroku.com/deploy?template=https://github.com/SoRsRR8r9/strong)
-• [Pyrogram](https://replit.com/@freedomSource/Session-Generator#main.py)
-</b>
-"""
-    await m.reply(REPO, disable_web_page_preview=True)
